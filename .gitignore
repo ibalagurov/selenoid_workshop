@@ -1,6 +1,9 @@
 # IDE config
 .idea
 
+# Allure reporting
+allure-results
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
