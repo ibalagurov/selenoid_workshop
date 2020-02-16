@@ -9,20 +9,24 @@ import pytest
     [
         ("chrome", "80.0"),
         ("chrome", "79.0"),
+        ("chrome", "78.0"),
         ("firefox", "71.0"),
         ("firefox", "72.0"),
         ("opera", "65.0"),
         ("opera", "66.0"),
     ],
 )
-def test_test(browser_name, version):
+def test_test(browser_name, version, request):
     capabilities = {
         "browserName": browser_name,
         "version": version,
         "platform": "LINUX",
         "enableVNC": True,
         "enableVideo": True,
-        "name": f"{browser_name} {version} test - {request.node.name}"
+        "enableLog": True,
+        "name": f"{browser_name} {version} test - {request.node.name}",
+        "screenResolution": "1024x768x24",
+        "sessionTimeout": "2m",
     }
     driver = webdriver.Remote(command_executor="http://localhost:4444/wd/hub", desired_capabilities=capabilities)
 
