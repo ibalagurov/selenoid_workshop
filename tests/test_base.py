@@ -2,13 +2,11 @@ import pytest
 import allure
 
 
-@pytest.mark.parametrize(
-    "browser_name,version", [("chrome", "80.0")],
-)
+@pytest.mark.parametrize("browser_name,version", [("chrome", "80.0")])
 @pytest.mark.parametrize("n", (_ for _ in range(12)))
 def test_test(browser_name, version, selene_browser, n):
 
-    browser = selene_browser()
+    browser = selene_browser(browser_name=browser_name, version=version)
     driver = browser.driver
     session_id = driver.session_id
     allure.attach(body=session_id, attachment_type=allure.attachment_type.TEXT, name="Session")
