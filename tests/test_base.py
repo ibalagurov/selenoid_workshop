@@ -3,17 +3,22 @@ from selenium.webdriver.common.keys import Keys
 
 import pytest
 
+GGR = True
+
+host = "http://test:test-password@localhost:4445/wd/hub" if GGR else "http://localhost:4444/wd/hub"
+
 
 @pytest.mark.parametrize(
     "browser_name,version",
     [
         ("chrome", "80.0"),
+        ("chrome", "80.0"),
+        ("chrome", "80.0"),
+        ("chrome", "80.0"),
+        ("chrome", "80.0"),
+        ("chrome", "80.0"),
         ("chrome", "79.0"),
-        ("chrome", "78.0"),
-        ("chrome", "77.0"),
         ("firefox", "71.0"),
-        ("firefox", "72.0"),
-        ("opera", "65.0"),
         ("opera", "66.0"),
     ],
 )
@@ -29,7 +34,7 @@ def test_test(browser_name, version, request):
         "screenResolution": "1024x768x24",
         "sessionTimeout": "2m",
     }
-    driver = webdriver.Remote(command_executor="http://localhost:4444/wd/hub", desired_capabilities=capabilities)
+    driver = webdriver.Remote(command_executor=host, desired_capabilities=capabilities)
 
     try:
         print("Session ID is: %s" % driver.session_id)
