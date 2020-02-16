@@ -4,11 +4,10 @@ import selene
 from functools import lru_cache
 
 from src import driver
+from config import config
 
-ONE_SESSION = True
 
-
-@pytest.fixture(scope="session" if ONE_SESSION else "functions")
+@pytest.fixture(scope="session" if config.test_run.ONE_SESSION else "function")
 def selene_browser():
     selene_browsers = []
 
@@ -33,7 +32,7 @@ def selene_browser():
         selene_browsers.append(selene_browser)
         return selene_browser
 
-    yield lru_cache()(create) if ONE_SESSION else create
+    yield lru_cache()(create) if config.test_run.ONE_SESSION else create
 
     for _selene_browser in selene_browsers:
         _selene_browser.quit()

@@ -1,8 +1,8 @@
 from selenium import webdriver
 
+from config import config
 
-GGR = False
-host = "http://test:test-password@localhost:4445/wd/hub" if GGR else "http://localhost:4444/wd/hub"
+host = "http://test:test-password@localhost:4445/wd/hub" if config.test_run.GGR else "http://localhost:4444/wd/hub"
 
 
 def create(browser_name, version):
