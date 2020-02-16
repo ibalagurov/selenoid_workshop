@@ -10,9 +10,10 @@ host = "http://test:test-password@localhost:4445/wd/hub" if GGR else "http://loc
 
 
 @pytest.mark.parametrize(
-    "browser_name,version", [("chrome", "80.0"), ("chrome", "79.0"), ("firefox", "71.0"), ("opera", "66.0")],
+    "browser_name,version", [("chrome", "80.0")],
 )
-def test_test(browser_name, version, request):
+@pytest.mark.parametrize("n", (_ for _ in range(24)))
+def test_test(browser_name, version, request, n):
     capabilities = {
         "browserName": browser_name,
         "version": version,
