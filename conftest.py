@@ -14,7 +14,7 @@ def selene_browser():
 
     def create(browser_name=None, version=None) -> selene.Browser:
         if browser_name is None:
-            browser_name = 'chrome'
+            browser_name = "chrome"
         if version is None:
             version = "80.0"
 
@@ -22,7 +22,7 @@ def selene_browser():
             driver=driver.create(browser_name=browser_name, version=version),
             timeout=30,
             hook_wait_failure=None,
-            base_url='',
+            base_url="",
             set_value_by_js=False,
             type_by_js=False,
             window_width=None,
