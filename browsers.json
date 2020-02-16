@@ -2,6 +2,11 @@
   "chrome": {
     "default": "80.0",
     "versions": {
+      "77.0": {
+        "image": "selenoid/chrome:77.0",
+        "port": "4444",
+        "path": "/"
+      },
       "78.0": {
         "image": "selenoid/chrome:78.0",
         "port": "4444",
