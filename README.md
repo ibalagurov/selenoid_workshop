@@ -1,5 +1,6 @@
 # selenoid_workshop
-Selenoid workshop: Pytest + Selenoid 
+Selenoid workshop: Pytest + Selenoid
+
 Allure and Selene will be added in future
 
 
