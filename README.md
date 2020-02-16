@@ -1,5 +1,5 @@
 # selenoid_workshop
-Selenoid workshop: Pytest with xdist + Selenoid + GGR + Allure
+Selenoid workshop: Pytest with xdist + Selenoid + GGR + Allure + Selene
 
 # installation
 - [python staff](https://medium.com/@briantorresgil/definitive-guide-to-python-on-mac-osx-65acd8d969d0)
