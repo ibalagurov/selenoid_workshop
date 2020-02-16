@@ -11,6 +11,7 @@ pytest = "^5.3.5"
 allure-pytest = "^2.8.10"
 pytest-xdist = "^1.31.0"
 selenium = "^3.141.0"
+selene = {version = "^2.0.0-alpha.21", allow-prereleases = true}
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
