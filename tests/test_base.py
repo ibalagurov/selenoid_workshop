@@ -10,18 +10,7 @@ host = "http://test:test-password@localhost:4445/wd/hub" if GGR else "http://loc
 
 
 @pytest.mark.parametrize(
-    "browser_name,version",
-    [
-        ("chrome", "80.0"),
-        ("chrome", "80.0"),
-        ("chrome", "80.0"),
-        ("chrome", "80.0"),
-        ("chrome", "80.0"),
-        ("chrome", "80.0"),
-        ("chrome", "79.0"),
-        ("firefox", "71.0"),
-        ("opera", "66.0"),
-    ],
+    "browser_name,version", [("chrome", "80.0"), ("chrome", "79.0"), ("firefox", "71.0"), ("opera", "66.0")],
 )
 def test_test(browser_name, version, request):
     capabilities = {
@@ -39,19 +28,31 @@ def test_test(browser_name, version, request):
 
     try:
         session_id = driver.session_id
-        allure.attach(body=session_id, attachment_type=allure.attachment_type.TEXT)
-        print(f"Session ID is: {session_id}")
-        print("Opening the page...")
-        driver.get("http://duckduckgo.com/")
+        allure.attach(body=session_id, attachment_type=allure.attachment_type.TEXT, name="Session")
 
-        print("Typing search request...")
-        search_input = driver.find_element_by_css_selector("input[id='search_form_input_homepage']")
-        search_input.send_keys("selenium", Keys.ENTER)
+        with allure.step("Opening the page..."):
+            driver.get("http://duckduckgo.com/")
 
-        print("Taking screenshot...")
-        driver.get_screenshot_as_file(f"screenshots/{session_id}.png")
-        allure.link(url=f"http://localhost:4445/host/{session_id}", name="host")
-        allure.link(url=f"http://localhost:4445/logs/{session_id}", name="logs")
-        allure.link(url=f"http://localhost:4445/video/{session_id}", name="video")
+        with allure.step("Typing search request..."):
+            search_input = driver.find_element_by_css_selector("input[id='search_form_input_homepage']")
+            search_input.send_keys("selenium", Keys.ENTER)
+
+        with allure.step("Taking screenshot..."):
+            screen_shot = driver.get_screenshot_as_png()
+            allure.attach(body=screen_shot, attachment_type=allure.attachment_type.PNG)
+
+        allure.attach(
+            body=f"http://localhost:4445/host/{session_id}",
+            attachment_type=allure.attachment_type.TEXT,
+            name="Host information",
+        )
+        allure.attach(
+            body=f"http://localhost:4445/logs/{session_id}",
+            attachment_type=allure.attachment_type.TEXT,
+            name="Selenium logs",
+        )
+        allure.attach(
+            body=f"http://localhost:4445/video/{session_id}", attachment_type=allure.attachment_type.TEXT, name="Video"
+        )
     finally:
         driver.quit()

@@ -6,6 +6,7 @@ allure-results
 
 # selenoid temp files
 cm
+ggr_darwin_amd64
 screenshots/*
 
 # Byte-compiled / optimized / DLL files
