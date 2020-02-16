@@ -10,6 +10,7 @@ import pytest
         ("chrome", "80.0"),
         ("chrome", "79.0"),
         ("chrome", "78.0"),
+        ("chrome", "77.0"),
         ("firefox", "71.0"),
         ("firefox", "72.0"),
         ("opera", "65.0"),
@@ -40,6 +41,6 @@ def test_test(browser_name, version, request):
         search_input.send_keys("selenium", Keys.ENTER)
 
         print("Taking screenshot...")
-        driver.get_screenshot_as_file(driver.session_id + ".png")
+        driver.get_screenshot_as_file(f"screenshots/{driver.session_id}.png")
     finally:
         driver.quit()
