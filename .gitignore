@@ -4,6 +4,10 @@
 # Allure reporting
 allure-results
 
+# selenoid temp files
+cm
+*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
