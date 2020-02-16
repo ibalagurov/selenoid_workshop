@@ -20,8 +20,9 @@ def test_test(browser_name, version):
         "browserName": browser_name,
         "version": version,
         "platform": "LINUX",
-        # "enableVNC": True,
-        # "enableVideo": True,
+        "enableVNC": True,
+        "enableVideo": True,
+        "name": f"{browser_name} {version} test - {request.node.name}"
     }
     driver = webdriver.Remote(command_executor="http://localhost:4444/wd/hub", desired_capabilities=capabilities)
 
