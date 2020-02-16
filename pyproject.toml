@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "selenoid_workshop"
 version = "0.1.0"
-description = "Selenoid workshop: Pytest + Selenoid"
+description = "Selenoid workshop: Pytest with xdist + Selenoid + GGR + Allure"
 authors = ["Igor Balagurov <balagurovi@yandex.ru>"]
 license = "MIT"
 
