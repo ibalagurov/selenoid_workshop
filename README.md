@@ -1,12 +1,13 @@
 # selenoid_workshop
 Selenoid workshop: Pytest with xdist + Selenoid + GGR + Allure + Selene
 
-# installation
+# installation (for macOS)
 - [python staff](https://medium.com/@briantorresgil/definitive-guide-to-python-on-mac-osx-65acd8d969d0)
     - brew
         - python though brew
         - pyenv through brew
     - poetry through python
+- [docker](https://docs.docker.com/docker-for-mac/install/)
 - [cm](https://aerokube.com/cm/latest/)
     - [selenoid](https://aerokube.com/selenoid/latest) through cm
     - [selenoid-ui](https://aerokube.com/selenoid-ui/latest) through cm
