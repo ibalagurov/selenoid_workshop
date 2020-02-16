@@ -7,6 +7,7 @@ allure-results
 # selenoid temp files
 cm
 ggr_darwin_amd64
+ggr-ui_darwin_amd64
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
