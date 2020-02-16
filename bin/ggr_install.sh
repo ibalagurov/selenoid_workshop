@@ -16,3 +16,6 @@ htpasswd -bc ./grid-router/users.htpasswd test test-password
 #    --net host aerokube/ggr:latest-release
 
 echo "should be available on http://localhost:4445/ping"
+echo "video should be available on http://localhost:4445/video/{session_id}}"
+echo "video should be available on http://localhost:4445/logs/{session_id}}"
+echo "host information should be available on http://localhost:4445/host/{session_id}}"

@@ -1,42 +1,49 @@
 <qa:browsers xmlns:qa="urn:config.gridrouter.qatools.ru">
-<browser name="chrome" defaultVersion="80.0">
-    <version number="80.0">
-        <region name="minsk">
-            <host name="192.168.6.212" port="4444" count="1"/>
-            <host name="192.168.6.213" port="4444" count="1"/>
-            <host name="192.168.6.218" port="4444" count="1"/>
-            <host name="192.168.6.200" port="4444" count="1"/>
-        </region>
-    </version>
-</browser>
-<browser name="chrome" defaultVersion="79.0">
-    <version number="79.0">
-        <region name="minsk">
-            <host name="192.168.6.212" port="4444" count="1"/>
-            <host name="192.168.6.213" port="4444" count="1"/>
-            <host name="192.168.6.218" port="4444" count="1"/>
-            <host name="192.168.6.200" port="4444" count="1"/>
-        </region>
-    </version>
-</browser>
-<browser name="opera" defaultVersion="66.0">
-    <version number="66.0">
-        <region name="minsk">
-            <host name="192.168.6.212" port="4444" count="1"/>
-            <host name="192.168.6.213" port="4444" count="1"/>
-            <host name="192.168.6.218" port="4444" count="1"/>
-            <host name="192.168.6.200" port="4444" count="1"/>
-        </region>
-    </version>
-</browser>
-<browser name="firefox" defaultVersion="71.0">
-    <version number="71.0">
-        <region name="minsk">
-            <host name="192.168.6.212" port="4444" count="1"/>
-            <host name="192.168.6.213" port="4444" count="1"/>
-            <host name="192.168.6.218" port="4444" count="1"/>
-            <host name="192.168.6.200" port="4444" count="1"/>
-        </region>
-    </version>
-</browser>
+    <browser name="chrome" defaultVersion="80.0">
+        <version number="80.0">
+            <region name="minsk">
+                <host name="192.168.6.212" port="4444" count="1"/>
+                <host name="192.168.6.213" port="4444" count="1"/>
+                <host name="192.168.6.218" port="4444" count="1"/>
+                <host name="192.168.6.200" port="4444" count="1"/>
+            </region>
+        </version>
+        <version number="79.0">
+            <region name="minsk">
+                <host name="192.168.6.212" port="4444" count="1"/>
+                <host name="192.168.6.213" port="4444" count="1"/>
+                <host name="192.168.6.218" port="4444" count="1"/>
+                <host name="192.168.6.200" port="4444" count="1"/>
+            </region>
+        </version>
+    </browser>
+
+    <browser name="opera" defaultVersion="66.0">
+        <version number="66.0">
+            <region name="minsk">
+                <host name="192.168.6.212" port="4444" count="1"/>
+                <host name="192.168.6.213" port="4444" count="1"/>
+                <host name="192.168.6.218" port="4444" count="1"/>
+                <host name="192.168.6.200" port="4444" count="1"/>
+            </region>
+        </version>
+    </browser>
+    <browser name="firefox" defaultVersion="71.0">
+        <version number="71.0">
+            <region name="minsk">
+                <host name="192.168.6.212" port="4444" count="1"/>
+                <host name="192.168.6.213" port="4444" count="1"/>
+                <host name="192.168.6.218" port="4444" count="1"/>
+                <host name="192.168.6.200" port="4444" count="1"/>
+            </region>
+        </version>
+        <version number="72.0">
+            <region name="minsk">
+                <host name="192.168.6.212" port="4444" count="1"/>
+                <host name="192.168.6.213" port="4444" count="1"/>
+                <host name="192.168.6.218" port="4444" count="1"/>
+                <host name="192.168.6.200" port="4444" count="1"/>
+            </region>
+        </version>
+    </browser>
 </qa:browsers>

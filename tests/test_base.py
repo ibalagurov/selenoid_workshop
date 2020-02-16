@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 import pytest
+import allure
 
 GGR = True
 
@@ -37,7 +38,9 @@ def test_test(browser_name, version, request):
     driver = webdriver.Remote(command_executor=host, desired_capabilities=capabilities)
 
     try:
-        print("Session ID is: %s" % driver.session_id)
+        session_id = driver.session_id
+        allure.attach(body=session_id, attachment_type=allure.attachment_type.TEXT)
+        print(f"Session ID is: {session_id}")
         print("Opening the page...")
         driver.get("http://duckduckgo.com/")
 
@@ -46,6 +49,9 @@ def test_test(browser_name, version, request):
         search_input.send_keys("selenium", Keys.ENTER)
 
         print("Taking screenshot...")
-        driver.get_screenshot_as_file(f"screenshots/{driver.session_id}.png")
+        driver.get_screenshot_as_file(f"screenshots/{session_id}.png")
+        allure.link(url=f"http://localhost:4445/host/{session_id}", name="host")
+        allure.link(url=f"http://localhost:4445/logs/{session_id}", name="logs")
+        allure.link(url=f"http://localhost:4445/video/{session_id}", name="video")
     finally:
         driver.quit()

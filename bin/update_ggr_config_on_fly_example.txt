@@ -1,0 +1,7 @@
+after update /grid-router/quota/*.xml file
+
+~$ ps ax | grep ggr
+62646 s000  S+     0:00.37 ./ggr_darwin_amd64 -quotaDir grid-router/quota/ -users grid-router/users.htpasswd -listen :4445
+63149 s003  S+     0:00.00 grep ggr
+
+~$ kill -HUP 62646
